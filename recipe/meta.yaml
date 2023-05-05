@@ -1,5 +1,5 @@
 {% set name = "fvgp" %}
-{% set version = "7.4.8" %}
+{% set version = "7.4.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/lbl-camera/fvGP/archive/{{ version }}.tar.gz
-  sha256: 6b743a16dd90863e89b3dccb6c08e95356d1898dd9de8788f1c53952e475d89c
+  sha256: 994aa97ad476e91044dcdec835d770d9f3e91670d87fe978bf2ae3235f2ab82b
   patches:
     - dep.patch
 
