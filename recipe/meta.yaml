@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/lbl-camera/fvGP/archive/{{ version }}.tar.gz
-  sha256: 994aa97ad476e91044dcdec835d770d9f3e91670d87fe978bf2ae3235f2ab82b
+  sha256: 044083c806fe11348c8248797a654fa526ccfa7a3e5e60325d6e35728cf325d6
   patches:
     - dep.patch
 
