@@ -7,21 +7,22 @@ package:
 
 source:
   url: https://github.com/lbl-camera/fvGP/archive/{{ version }}.tar.gz
-  sha256: 994aa97ad476e91044dcdec835d770d9f3e91670d87fe978bf2ae3235f2ab82b
+  sha256: e41b053efa08869ed292b53d707d755d969b0500c608c8ff8a208b2846de4444
   patches:
     - dep.patch
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - pytorch >=1.9.0
     - scipy
     - numpy
@@ -40,6 +41,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/lbl-camera/fvGP
