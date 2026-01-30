@@ -29,7 +29,7 @@ requirements:
     - matplotlib-base
     - dask-core >=2021.6.2
     - distributed >=2021.6.2
-    - hgdl =2.0.7
+    - hgdl =2.1.2
     - notebook
     - plotly
     - loguru
