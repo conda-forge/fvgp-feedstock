@@ -1,5 +1,5 @@
 {% set name = "fvgp" %}
-{% set version = "4.3.5" %}
+{% set version = "4.4.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fvgp-{{ version }}.tar.gz
-  sha256: 3b834673e0d53b96594c4d8ea2ae2f648baaaa80ff3dbb4923350ba4b5a9087b
+  sha256: e55368601eb96cf69e6e96f0655e8722d754bf173a65cc26089ad8245781a8bc
 
 build:
   noarch: python
