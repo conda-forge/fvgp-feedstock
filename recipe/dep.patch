@@ -14,6 +14,6 @@ index f0404e8..bfeb553 100644
 @@ -1,5 +1,3 @@
 -wheel
 -versioneer
- torch >= 1.9.0
- scipy
- numpy
+ matplotlib
+ plotly
+ scipy == 1.11.2
