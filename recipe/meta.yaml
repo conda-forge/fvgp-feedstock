@@ -23,11 +23,11 @@ requirements:
   run:
     - python >={{ python_min }}
     - wheel
-    - scipy >=1.13.0,<1.14.0
-    - numpy >=1.26.4,<1.27.0
-    - dask-core >=2024.1.0,<2024.2.0
-    - distributed >=2024.1.0,<2024.2.0
-    - hgdl >=2.1.9,<2.2.0
+    - scipy >=1.16.0,<1.17.dev0
+    - numpy >=2.2.6,<2.3.dev0
+    - dask-core >=2025.5.1,<2025.6.dev0
+    - distributed >=2025.5.1,<2025.6.dev0
+    - hgdl >=2.3.1,<2.4.dev0
     - loguru
 
 test:
