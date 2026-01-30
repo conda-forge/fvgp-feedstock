@@ -1,5 +1,5 @@
 {% set name = "fvgp" %}
-{% set version = "4.4.3" %}
+{% set version = "4.5.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fvgp-{{ version }}.tar.gz
-  sha256: e55368601eb96cf69e6e96f0655e8722d754bf173a65cc26089ad8245781a8bc
+  sha256: 961723b261614b0422ffae667fadace3fc5c84d0f40305473e11618fb486c4cf
 
 build:
   noarch: python
@@ -24,10 +24,10 @@ requirements:
     - python >={{ python_min }}
     - wheel
     - scipy >=1.13.0,<1.14.0
-    - numpy >=1.26.4,<1.27.0
+    - numpy >=2.1.1,<2.2.0
     - dask-core >=2024.1.0,<2024.2.0
     - distributed >=2024.1.0,<2024.2.0
-    - hgdl >=2.1.9,<2.2.0    
+    - hgdl >=2.2.1,<2.3.0   
     - loguru
 
 test:
