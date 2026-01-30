@@ -1,5 +1,6 @@
 {% set name = "fvgp" %}
 {% set version = "4.7.7" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
