@@ -23,13 +23,12 @@ requirements:
     - setuptools
   run:
     - python >={{ python_min }}
-    - pytorch >=1.9.0
-    - scipy
-    - numpy
+    - scipy =1.11.2
+    - numpy =1.23.5
     - matplotlib-base
     - dask-core >=2021.6.2
     - distributed >=2021.6.2
-    - hgdl =2.1.2
+    - hgdl =2.1.3
     - notebook
     - plotly
     - loguru
