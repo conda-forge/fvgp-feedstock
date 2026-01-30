@@ -1,15 +1,13 @@
 {% set name = "fvgp" %}
-{% set version = "4.1.3" %}
+{% set version = "4.2.14" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/lbl-camera/fvGP/archive/{{ version }}.tar.gz
-  sha256: 4c8c4e561a33c560dce93c37cd9f24f43d53acaa6326dc3687c78f4737ee71d0
-  patches:
-    - dep.patch
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fvgp-{{ version }}.tar.gz
+  sha256: e8c97dcd15643f7e7c45b050c76c0c688f364cd68b1129dcff5199265cbec944
 
 build:
   noarch: python
@@ -20,17 +18,16 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools
+    - hatchling
+    - hatch-vcs
   run:
     - python >={{ python_min }}
-    - scipy =1.12.0
-    - numpy =1.23.5
-    - matplotlib-base
-    - dask-core =2024.1.0
-    - distributed =2024.1.0
-    - hgdl =2.1.3
-    - notebook
-    - plotly
+    - wheel
+    - scipy >=1.13.0,<1.14.0
+    - numpy >=1.26.4,<1.27.0
+    - dask-core >=2024.1.0,<2024.2.0
+    - distributed >=2024.1.0,<2024.2.0
+    - hgdl >=2.1.9,<2.2.0
     - loguru
 
 test:
