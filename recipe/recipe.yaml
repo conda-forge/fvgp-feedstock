@@ -1,28 +1,30 @@
-{% set name = "fvgp" %}
-{% set version = "4.8.8" %}
-{% set python_min = "3.11" %}
+schema_version: 1
+
+context:
+  name: fvgp
+  version: "4.8.8"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fvgp-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/fvgp-${{ version }}.tar.gz
   sha256: 28f6e92ccb86c248fd9b50cf9682909662efbe8fbcfaa958f87be7c6b3a2345f
 
 build:
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  script: ${{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - pip
     - hatchling
     - hatch-vcs
   run:
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
     - wheel
     - scipy >=1.13
     - numpy >=2.1
@@ -31,20 +33,20 @@ requirements:
     - hgdl >=2.2.3
     - loguru
 
-test:
-  imports:
-    - fvgp
-  commands:
-    - pip check
-  requires:
-    - pip
-    - python {{ python_min }}
+tests:
+  - python:
+      imports:
+        - fvgp
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
 
 about:
-  home: https://github.com/lbl-camera/fvGP
   summary: Python package for highly flexible function-valued Gaussian processes (fvGP)
   license: GPL-3.0-or-later
   license_file: LICENSE
+  homepage: https://github.com/lbl-camera/fvGP
 
 extra:
   recipe-maintainers:
