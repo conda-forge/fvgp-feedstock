@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: fvgp
-  version: "4.8.8"
+  version: 4.9.2
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/fvgp-${{ version }}.tar.gz
-  sha256: 28f6e92ccb86c248fd9b50cf9682909662efbe8fbcfaa958f87be7c6b3a2345f
+  sha256: e96d304c9a3b485183d5319eb08d9ed20ecda86e5ddf5a6430b0fce5857ac620
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
 
@@ -30,9 +30,8 @@ requirements:
     - numpy >=2.1
     - dask-core >=2024.1
     - distributed >=2024.1
-    - hgdl >=2.2.3
+    - hgdl >=2.4.2,<2.5.dev0
     - loguru
-
 tests:
   - python:
       imports:
@@ -40,7 +39,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}
-        - "*"
+        - '*'
 
 about:
   summary: Python package for highly flexible function-valued Gaussian processes (fvGP)
