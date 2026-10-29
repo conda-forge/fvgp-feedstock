@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: fvgp
-  version: "4.11.0"
+  version: "4.11.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/fvgp-${{ version }}.tar.gz
-  sha256: ce48b7c3d8abb0e4bd5b33f61bf814be2032e4b0e644c02fa94b77f2c184910f
+  sha256: 88bc35481f33f8e09f8561c9c2829c23210aa62202d54157ef3a26378609a02a
 
 build:
   number: 0
